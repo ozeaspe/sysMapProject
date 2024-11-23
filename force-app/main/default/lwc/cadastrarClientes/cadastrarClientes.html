@@ -1,0 +1,98 @@
+<template>
+    <lightning-card  title="Cadastrar Clientes">
+        <lightning-layout multiple-rows=true>
+            <lightning-layout-item padding="slds-p-around_xxx-small" size="4">
+                <div class="slds-m-left_small">
+                    <lightning-input 
+                        type="text" 
+                        label="Informe o CNPJ" 
+                        value={cnpj}
+                        maxlength="14"
+                        placeholder="Apenas Números"
+                        onchange={handleInputCnpj}>
+                    </lightning-input>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout multiple-rows=true>
+            <lightning-layout-item padding="around-small">
+                    <div class="slds-m-top_xxx-small">
+                        <lightning-button 
+                            variant="brand" 
+                            label="Pesquisar" 
+                            onclick={handlePesquisar} 
+                            >
+                        
+                        </lightning-button>
+                    </div>
+            </lightning-layout-item>
+            
+            
+        </lightning-layout>
+        <template if:true={cliente.nome}>
+            <lightning-layout multiple-rows=true> 
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="Nome ou Razão Social" value={cliente.nome} onchange={handlerChangeNome}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="Logradouro" value={cliente.logradouro} onchange={handlerChangeLogradouro}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="Número" value={cliente.numero} onchange={handlerChangeNumero}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="Complemento" value={cliente.complemento} onchange={handlerChangeComplemento}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="Bairro" value={cliente.bairro} onchange={handlerChangeBairro}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="Município" value={cliente.municipio} onchange={handlerChangeMunicipio}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="UF" value={cliente.uf} onchange={handlerChangeUf}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="CEP" value={cliente.cep} onchange={handlerChangeCep}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="Telefone" value={cliente.telefone} onchange={handlerChangeTelefone}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="4">
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="text" label="Situação Cadastral" value={cliente.situacao} onchange={handlerChangeSituacao}></lightning-input>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <div class="slds-m-left_large">
+                    <lightning-button 
+                    variant="brand" 
+                    label="Cadastrar Cliente" 
+                    onclick={handleNovoCliente} 
+                    >
+                
+                    </lightning-button>
+                </div>
+        </lightning-layout-item>
+        </template>
+    </lightning-card>
+</template>
